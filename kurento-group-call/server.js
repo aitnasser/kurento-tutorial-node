@@ -1,11 +1,6 @@
 /*
- * (C) Copyright 2014 Kurento (http://kurento.org/)
- *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the GNU Lesser General Public License
- * (LGPL) version 2.1 which accompanies this distribution, and is available at
- * http://www.gnu.org/licenses/lgpl-2.1.html
- *
+ * @author: Thabungba Meetei 
+ * 
  * This library is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
@@ -25,7 +20,7 @@ var argv = minimist(process.argv.slice(2),
             default:
                     {
                         as_uri: "http://localhost:8081/",
-                        ws_uri: "ws://52.10.87.16:5003/kurento"
+                        ws_uri: "ws://localhost:8888/kurento"
 
                     }
         });
@@ -347,6 +342,5 @@ function UserSession(id, name, ws,room) {
 UserSession.prototype.sendMessage = function (message) {
     this.ws.send(JSON.stringify(message));
 }
-/****** my function ends here***********/
 
 app.use(express.static(path.join(__dirname, 'static')));
